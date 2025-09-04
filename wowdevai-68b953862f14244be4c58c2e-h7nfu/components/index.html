@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KrishiMitra - AI Crop Recommendation System | Government of Jharkhand</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://use.typekit.net/yjp3aho.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            'sofia': ['sofia-pro', 'sans-serif']
+          },
+          colors: {
+            'jharkhand-green': '#228B22',
+            'jharkhand-orange': '#FF8C00'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="font-sofia bg-gradient-to-br from-green-50 to-blue-50 min-h-screen">
+  
+  <!-- ✅ Navbar -->
+  <nav class="bg-white shadow-md fixed w-full top-0 z-50">
+    <div class="container mx-auto px-4 flex items-center justify-between h-16">
+      <!-- Logo -->
+      <a href="#" class="flex items-center space-x-2">
+        <i data-lucide="sprout" class="w-6 h-6 text-jharkhand-green"></i>
+        <span class="font-bold text-xl text-jharkhand-green">KrishiMitra</span>
+      </a>
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex space-x-8 font-medium text-gray-700">
+        <a href="#hero-section" class="hover:text-jharkhand-green">Home</a>
+        <a href="#quick-actions-section" class="hover:text-jharkhand-green">Solutions</a>
+        <a href="#language-section" class="hover:text-jharkhand-green">Languages</a>
+        <a href="#data-sources-section" class="hover:text-jharkhand-green">Data Sources</a>
+      </div>
+      <!-- Mobile Menu Button -->
+      <button id="menu-btn" class="md:hidden">
+        <i data-lucide="menu" class="w-6 h-6 text-gray-700"></i>
+      </button>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+      <div class="flex flex-col space-y-2 p-4 text-gray-700 font-medium">
+        <a href="#hero-section" class="hover:text-jharkhand-green">Home</a>
+        <a href="#quick-actions-section" class="hover:text-jharkhand-green">Solutions</a>
+        <a href="#language-section" class="hover:text-jharkhand-green">Languages</a>
+        <a href="#data-sources-section" class="hover:text-jharkhand-green">Data Sources</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="pt-24 pb-16" id="hero-section">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div class="space-y-8">
+            <div class="space-y-4">
+              <div class="inline-flex items-center bg-jharkhand-green/10 text-jharkhand-green px-4 py-2 rounded-full text-sm font-medium">
+                <i data-lucide="shield-check" class="w-4 h-4 mr-2"></i>
+                Government of Jharkhand Initiative
+              </div>
+              <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                कृषि मित्र
+                <span class="block text-jharkhand-green">KrishiMitra</span>
+              </h1>
+              <p class="text-xl text-gray-600 leading-relaxed">
+                AI-powered crop recommendation system helping farmers make informed decisions with disease prediction and yield forecasting
+              </p>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row gap-4">
+              <button class="bg-jharkhand-green text-white px-8 py-4 rounded-lg font-semibold hover:bg-green-700 transition-colors flex items-center justify-center">
+                <i data-lucide="sprout" class="w-5 h-5 mr-2"></i>
+                Get Crop Recommendations
+              </button>
+              <button class="border-2 border-jharkhand-green text-jharkhand-green px-8 py-4 rounded-lg font-semibold hover:bg-jharkhand-green hover:text-white transition-colors flex items-center justify-center">
+                <i data-lucide="camera" class="w-5 h-5 mr-2"></i>
+                Disease Detection
+              </button>
+            </div>
+
+            <div class="grid grid-cols-3 gap-8 pt-8">
+              <div class="text-center">
+                <div class="text-2xl font-bold text-jharkhand-green">50K+</div>
+                <div class="text-sm text-gray-600">Farmers Helped</div>
+              </div>
+              <div class="text-center">
+                <div class="text-2xl font-bold text-jharkhand-green">95%</div>
+                <div class="text-sm text-gray-600">Accuracy</div>
+              </div>
+              <div class="text-center">
+                <div class="text-2xl font-bold text-jharkhand-green">24</div>
+                <div class="text-sm text-gray-600">Districts</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="relative">
+            <div class="relative z-10">
+              <img src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?auto=format&fit=crop&w=2070&q=80" 
+                   alt="Smart farming technology" 
+                   class="rounded-2xl shadow-2xl w-full">
+            </div>
+            <div class="absolute -top-4 -right-4 w-24 h-24 bg-jharkhand-orange rounded-full opacity-20"></div>
+            <div class="absolute -bottom-4 -left-4 w-32 h-32 bg-jharkhand-green rounded-full opacity-20"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Action Cards -->
+  <section class="py-16 bg-white" id="quick-actions-section">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">
+          Smart Farming Solutions
+        </h2>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Crop Recommendation -->
+          <div class="bg-gradient-to-br from-green-50 to-green-100 p-8 rounded-xl border-2 border-green-200 hover:shadow-lg transition-shadow cursor-pointer">
+            <div class="w-16 h-16 bg-jharkhand-green rounded-lg flex items-center justify-center mb-6">
+              <i data-lucide="sprout" class="w-8 h-8 text-white"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-gray-900">Crop Recommendation</h3>
+            <p class="text-gray-600 mb-4">
+              Get AI-powered recommendations based on soil data, weather patterns, and market trends
+            </p>
+            <ul class="space-y-2 text-sm text-gray-600">
+              <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-green-500 mr-2"></i>Soil analysis integration</li>
+              <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-green-500 mr-2"></i>Weather forecast analysis</li>
+              <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-green-500 mr-2"></i>Market price predictions</li>
+            </ul>
+          </div>
+
+          <!-- Disease Detection -->
+          <div class="bg-gradient-to-br from-orange-50 to-orange-100 p-8 rounded-xl border-2 border-orange-200 hover:shadow-lg transition-shadow cursor-pointer">
+            <div class="w-16 h-16 bg-jharkhand-orange rounded-lg flex items-center justify-center mb-6">
+              <i data-lucide="camera" class="w-8 h-8 text-white"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-gray-900">Disease Detection</h3>
+            <p class="text-gray-600 mb-4">
+              Instant plant disease identification using AI-powered image analysis
+            </p>
+            <ul class="space-y-2 text-sm text-gray-600">
+              <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-orange-500 mr-2"></i>Real-time image scanning</li>
+              <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-orange-500 mr-2"></i>Treatment recommendations</li>
+              <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-orange-500 mr-2"></i>Prevention strategies</li>
+            </ul>
+          </div>
+
+          <!-- Yield Prediction -->
+          <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-xl border-2 border-blue-200 hover:shadow-lg transition-shadow cursor-pointer">
+            <div class="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center mb-6">
+              <i data-lucide="trending-up" class="w-8 h-8 text-white"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-gray-900">Yield Prediction</h3>
+            <p class="text-gray-600 mb-4">
+              Forecast crop yields and potential profits using advanced ML algorithms
+            </p>
+            <ul class="space-y-2 text-sm text-gray-600">
+              <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-blue-500 mr-2"></i>Historical data analysis</li>
+              <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-blue-500 mr-2"></i>Profit margin calculations</li>
+              <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-blue-500 mr-2"></i>Risk assessment</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Language Support -->
+  <section class="py-16 bg-gradient-to-r from-jharkhand-green/10 to-jharkhand-orange/10" id="language-section">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-6 text-gray-900">स्थानीय भाषा समर्थन | Local Language Support</h2>
+        <p class="text-lg text-gray-600 mb-8">
+          Available in multiple languages to serve farmers across Jharkhand
+        </p>
+        
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+            <div class="text-2xl mb-2">🇮🇳</div>
+            <div class="font-semibold text-gray-900">हिंदी</div>
+            <div class="text-sm text-gray-600">Hindi</div>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+            <div class="text-2xl mb-2">🏛️</div>
+            <div class="font-semibold text-gray-900">বাংলা</div>
+            <div class="text-sm text-gray-600">Bengali</div>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+            <div class="text-2xl mb-2">🌾</div>
+            <div class="font-semibold text-gray-900">ᱥᱟᱱᱛᱟᱲᱤ</div>
+            <div class="text-sm text-gray-600">Santhali</div>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+            <div class="text-2xl mb-2">🌍</div>
+            <div class="font-semibold text-gray-900">English</div>
+            <div class="text-sm text-gray-600">English</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Data Sources -->
+  <section class="py-16 bg-white" id="data-sources-section">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">Powered by Reliable Data Sources</h2>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="text-center">
+            <div class="w-20 h-20 mx-auto mb-4 bg-blue-100 rounded-full flex items-center justify-center">
+              <i data-lucide="satellite" class="w-8 h-8 text-blue-600"></i>
+            </div>
+            <h3 class="font-bold text-gray-900 mb-2">ISRO Bhuvan</h3>
+            <p class="text-sm text-gray-600">Satellite imagery and soil data</p>
+          </div>
+          <div class="text-center">
+            <div class="w-20 h-20 mx-auto mb-4 bg-green-100 rounded-full flex items-center justify-center">
+              <i data-lucide="cloud-rain" class="w-8 h-8 text-green-600"></i>
+            </div>
+            <h3 class="font-bold text-gray-900 mb-2">IMD Weather</h3>
+            <p class="text-sm text-gray-600">Meteorological forecasts</p>
+          </div>
+          <div class="text-center">
+            <div class="w-20 h-20 mx-auto mb-4 bg-orange-100 rounded-full flex items-center justify-center">
+              <i data-lucide="trending-up" class="w-8 h-8 text-orange-600"></i>
+            </div>
+            <h3 class="font-bold text-gray-900 mb-2">eNAM</h3>
+            <p class="text-sm text-gray-600">Market prices and trends</p>
+          </div>
+          <div class="text-center">
+            <div class="w-20 h-20 mx-auto mb-4 bg-purple-100 rounded-full flex items-center justify-center">
+              <i data-lucide="cpu" class="w-8 h-8 text-purple-600"></i>
+            </div>
+            <h3 class="font-bold text-gray-900 mb-2">IoT Sensors</h3>
+            <p class="text-sm text-gray-600">Real-time soil monitoring</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- JS -->
+  <script>
+    // Initialize icons
+    lucide.createIcons();
+
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>
