@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,15 +24,12 @@
     }
   </script>
 </head>
-<body class="font-sofia min-h-screen" style="background-image: url('CROPIMAGE.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-  <!-- Navigation
-  <div id="navbar-container" data-source="components/navbar.html"></div> -->
 
+<body class="font-sofia bg-gradient-to-br from-green-50 to-blue-50 min-h-screen"
+  style="background-image: url('CROPIMAGE.png'); background-size: cover; background-position: center;">
   <!-- Main Content -->
   <main class="pt-20 pb-16" data-id="crop-recommendation-main">
-    
     <div class="container mx-auto px-4">
-     
       <div class="max-w-4xl mx-auto">
         <!-- Header -->
         <div class="text-center mb-12" data-id="crop-header">
@@ -46,138 +44,98 @@
         <!-- Input Form -->
         <div class="bg-white rounded-xl shadow-lg p-8 mb-8" data-id="crop-form-container">
           <form id="crop-form" class="space-y-6" data-id="crop-form">
-            <!-- Location -->
-            <div class="grid md:grid-cols-2 gap-6">
-              <div data-id="district-input-group">
-                <label class="block text-sm font-semibold text-gray-700 mb-2" data-id="district-label">
-                  District
-                </label>
-                <select class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-jharkhand-green" data-id="district-select">
-                  <option value="">Select District</option>
-                  <option value="ranchi">Ranchi</option>
-                  <option value="dhanbad">Dhanbad</option>
-                  <option value="jamshedpur">East Singhbhum (Jamshedpur)</option>
-                  <option value="bokaro">Bokaro</option>
-                  <option value="deoghar">Deoghar</option>
-                  <option value="hazaribagh">Hazaribagh</option>
-                  <option value="giridih">Giridih</option>
-                  <option value="palamu">Palamu</option>
-                  <option value="west-singhbhum">West Singhbhum</option>
-                  <option value="dumka">Dumka</option>
-                </select>
-              </div>
-              
-              <div data-id="area-input-group">
-                <label class="block text-sm font-semibold text-gray-700 mb-2" data-id="area-label">
-                  Farm Area (in acres)
-                </label>
-                <input type="number" placeholder="Enter farm area" 
-                       class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-jharkhand-green" 
-                       data-id="area-input">
-              </div>
-            </div>
-
-            <!-- Soil Parameters -->
-            <div class="border-t pt-6" data-id="soil-parameters-section">
-              <h3 class="text-lg font-semibold text-gray-900 mb-4" data-id="soil-parameters-title">
-                Soil Parameters
+            <!-- NPK Values -->
+            <div data-id="npk-section">
+              <h3 class="text-lg font-semibold text-gray-900 mb-4" data-id="npk-title">
+                NPK Values
               </h3>
               <div class="grid md:grid-cols-3 gap-6">
-                <div data-id="ph-input-group">
-                  <label class="block text-sm font-semibold text-gray-700 mb-2" data-id="ph-label">
-                    pH Level
+                <div data-id="n-input-group">
+                  <label class="block text-sm font-semibold text-gray-700 mb-2" data-id="n-label">
+                    N (Nitrogen)
                   </label>
-                  <input type="number" step="0.1" min="0" max="14" placeholder="6.5" 
-                         class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-jharkhand-green" 
-                         data-id="ph-input">
+                  <input type="number" id="n-input" name="N" placeholder="e.g. 90"
+                    class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-jharkhand-green"
+                    data-id="n-input" required>
                 </div>
-                
-                <div data-id="nitrogen-input-group">
-                  <label class="block text-sm font-semibold text-gray-700 mb-2" data-id="nitrogen-label">
-                    Nitrogen (N) mg/kg
+
+                <div data-id="p-input-group">
+                  <label class="block text-sm font-semibold text-gray-700 mb-2" data-id="p-label">
+                    P (Phosphorus)
                   </label>
-                  <input type="number" placeholder="250" 
-                         class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-jharkhand-green" 
-                         data-id="nitrogen-input">
+                  <input type="number" id="p-input" name="P" placeholder="e.g. 42"
+                    class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-jharkhand-green"
+                    data-id="p-input" required>
                 </div>
-                
-                <div data-id="phosphorus-input-group">
-                  <label class="block text-sm font-semibold text-gray-700 mb-2" data-id="phosphorus-label">
-                    Phosphorus (P) mg/kg
+
+                <div data-id="k-input-group">
+                  <label class="block text-sm font-semibold text-gray-700 mb-2" data-id="k-label">
+                    K (Potassium)
                   </label>
-                  <input type="number" placeholder="45" 
-                         class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-jharkhand-green" 
-                         data-id="phosphorus-input">
-                </div>
-              </div>
-              
-              <div class="grid md:grid-cols-3 gap-6 mt-6">
-                <div data-id="potassium-input-group">
-                  <label class="block text-sm font-semibold text-gray-700 mb-2" data-id="potassium-label">
-                    Potassium (K) mg/kg
-                  </label>
-                  <input type="number" placeholder="200" 
-                         class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-jharkhand-green" 
-                         data-id="potassium-input">
-                </div>
-                
-                <div data-id="moisture-input-group">
-                  <label class="block text-sm font-semibold text-gray-700 mb-2" data-id="moisture-label">
-                    Soil Moisture %
-                  </label>
-                  <input type="number" min="0" max="100" placeholder="35" 
-                         class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-jharkhand-green" 
-                         data-id="moisture-input">
-                </div>
-                
-                <div data-id="temperature-input-group">
-                  <label class="block text-sm font-semibold text-gray-700 mb-2" data-id="temperature-label">
-                    Soil Temperature °C
-                  </label>
-                  <input type="number" placeholder="25" 
-                         class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-jharkhand-green" 
-                         data-id="temperature-input">
+                  <input type="number" id="k-input" name="K" placeholder="e.g. 43"
+                    class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-jharkhand-green"
+                    data-id="k-input" required>
                 </div>
               </div>
             </div>
 
-            <!-- Season -->
-            <div class="border-t pt-6" data-id="season-section">
-              <label class="block text-sm font-semibold text-gray-700 mb-4" data-id="season-label">
-                Growing Season
-              </label>
-              <div class="grid grid-cols-3 gap-4">
-                <label class="flex items-center p-4 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50" data-id="kharif-season-option">
-                  <input type="radio" name="season" value="kharif" class="mr-3 text-jharkhand-green focus:ring-jharkhand-green" data-id="kharif-radio">
-                  <div>
-                    <div class="font-semibold text-gray-900">Kharif</div>
-                    <div class="text-sm text-gray-600">Jun - Oct</div>
-                  </div>
-                </label>
-                
-                <label class="flex items-center p-4 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50" data-id="rabi-season-option">
-                  <input type="radio" name="season" value="rabi" class="mr-3 text-jharkhand-green focus:ring-jharkhand-green" data-id="rabi-radio">
-                  <div>
-                    <div class="font-semibold text-gray-900">Rabi</div>
-                    <div class="text-sm text-gray-600">Nov - Apr</div>
-                  </div>
-                </label>
-                
-                <label class="flex items-center p-4 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50" data-id="zaid-season-option">
-                  <input type="radio" name="season" value="zaid" class="mr-3 text-jharkhand-green focus:ring-jharkhand-green" data-id="zaid-radio">
-                  <div>
-                    <div class="font-semibold text-gray-900">Zaid</div>
-                    <div class="text-sm text-gray-600">Apr - Jun</div>
-                  </div>
-                </label>
+            <!-- Climate Parameters -->
+            <div class="border-t pt-6" data-id="climate-section">
+              <h3 class="text-lg font-semibold text-gray-900 mb-4" data-id="climate-title">
+                Climate Parameters
+              </h3>
+              <div class="grid md:grid-cols-2 gap-6">
+                <div data-id="temperature-input-group">
+                  <label class="block text-sm font-semibold text-gray-700 mb-2" data-id="temperature-label">
+                    Temperature (°C)
+                  </label>
+                  <input type="number" step="0.01" id="temperature-input" name="temperature" placeholder="e.g. 20.87"
+                    class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-jharkhand-green"
+                    data-id="temperature-input" required>
+                </div>
+
+                <div data-id="humidity-input-group">
+                  <label class="block text-sm font-semibold text-gray-700 mb-2" data-id="humidity-label">
+                    Humidity (%)
+                  </label>
+                  <input type="number" step="0.01" id="humidity-input" name="humidity" placeholder="e.g. 82.00"
+                    class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-jharkhand-green"
+                    data-id="humidity-input" required>
+                </div>
+              </div>
+            </div>
+
+            <!-- Soil & Rainfall -->
+            <div class="border-t pt-6" data-id="soil-rainfall-section">
+              <h3 class="text-lg font-semibold text-gray-900 mb-4" data-id="soil-rainfall-title">
+                Soil & Rainfall
+              </h3>
+              <div class="grid md:grid-cols-2 gap-6">
+                <div data-id="ph-input-group">
+                  <label class="block text-sm font-semibold text-gray-700 mb-2" data-id="ph-label">
+                    ph
+                  </label>
+                  <input type="number" step="0.01" min="0" max="14" id="ph-input" name="ph" placeholder="e.g. 6.50"
+                    class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-jharkhand-green"
+                    data-id="ph-input" required>
+                </div>
+
+                <div data-id="rainfall-input-group">
+                  <label class="block text-sm font-semibold text-gray-700 mb-2" data-id="rainfall-label">
+                    Rainfall (mm)
+                  </label>
+                  <input type="number" step="0.01" id="rainfall-input" name="rainfall" placeholder="e.g. 202.93"
+                    class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-jharkhand-green"
+                    data-id="rainfall-input" required>
+                </div>
               </div>
             </div>
 
             <!-- Submit Button -->
             <div class="text-center pt-6" data-id="submit-section">
-              <button type="submit" 
-                      class="bg-jharkhand-green text-white px-8 py-4 rounded-lg font-semibold hover:bg-green-700 transition-colors inline-flex items-center" 
-                      data-id="submit-button">
+              <button type="submit"
+                class="bg-jharkhand-green text-white px-8 py-4 rounded-lg font-semibold hover:bg-green-700 transition-colors inline-flex items-center"
+                data-id="submit-button">
                 <i data-lucide="brain" class="w-5 h-5 mr-2"></i>
                 Get AI Recommendations
               </button>
@@ -193,25 +151,179 @@
     </div>
   </main>
 
-  <!-- Footer -->
-  <!-- <div id="footer-container" data-source="components/footer.html"></div> -->
-  
-  <!-- Badge -->
-  <!-- <div id="badge-container" data-source="components/badge.html"></div> -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
 
-  <script type="module">
-    import { loadComponent } from './scripts/components/loader.js';
-    
-    // Load all shared components
-    await loadComponent('#navbar-container');
-    await loadComponent('#footer-container');
-    await loadComponent('#badge-container');
-    
-    // Initialize icons after components are loaded
-    lucide.createIcons();
+      if (window.lucide) lucide.createIcons();
 
-    // Import and initialize page functionality
-    import('./scripts/pages/crop-recommendation.js');
+      const form = document.getElementById('crop-form');
+      const resultsSection = document.getElementById('results-section');
+      const button = form.querySelector('button');
+
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+
+        // ============================
+        // STEP 1: GET INPUT
+        // ============================
+        const payload = {
+          N: parseFloat(document.getElementById('n-input').value),
+          P: parseFloat(document.getElementById('p-input').value),
+          K: parseFloat(document.getElementById('k-input').value),
+          temperature: parseFloat(document.getElementById('temperature-input').value),
+          humidity: parseFloat(document.getElementById('humidity-input').value),
+          ph: parseFloat(document.getElementById('ph-input').value),
+          rainfall: parseFloat(document.getElementById('rainfall-input').value)
+        };
+
+        // ============================
+        // STEP 2: VALIDATE NaN
+        // ============================
+        for (const [key, val] of Object.entries(payload)) {
+          if (isNaN(val)) {
+            return showError(`Please enter a valid number for ${key}`);
+          }
+        }
+
+        // ============================
+        // STEP 3: RANGE VALIDATION
+        // ============================
+        if (payload.temperature < -10 || payload.temperature > 60) {
+          return showError("Temperature must be between -10 and 60°C");
+        }
+        // NPK realistic range
+        if (payload.N < 0 || payload.N > 200) {
+          return showError("Nitrogen (N) must be between 0 and 200");
+        }
+
+        if (payload.P < 0 || payload.P > 200) {
+          return showError("Phosphorus (P) must be between 0 and 200");
+        }
+
+        if (payload.K < 0 || payload.K > 200) {
+          return showError("Potassium (K) must be between 0 and 200");
+        }
+
+        if (payload.humidity < 0 || payload.humidity > 100) {
+          return showError("Humidity must be between 0 and 100%");
+        }
+
+        if (payload.ph < 0 || payload.ph > 14) {
+          return showError("pH must be between 0 and 14");
+        }
+
+        if (payload.rainfall < 0 || payload.rainfall > 500) {
+          return showError("Rainfall must be between 0 and 500 mm");
+        }
+
+        // ============================
+        // STEP 4: LOADING UI
+        // ============================
+        resultsSection.classList.remove('hidden');
+        button.disabled = true;
+        button.innerText = "Processing...";
+
+        resultsSection.innerHTML = `
+      <div class="bg-white rounded-xl shadow-lg p-8 text-center">
+        <div class="animate-spin inline-block w-8 h-8 border-4 border-green-600 border-t-transparent rounded-full mb-4"></div>
+        <p class="text-gray-600">Analyzing your soil and climate data...</p>
+      </div>
+    `;
+
+        try {
+          // ============================
+          // STEP 5: API CALL
+          // ============================
+          const response = await fetch('http://localhost:5000/predict_crop', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+
+          const data = await response.json();
+
+          if (!response.ok) {
+            throw new Error(data.error || 'Server error');
+          }
+
+          // ============================
+          // STEP 6: SHOW RESULT
+          // ============================
+          const crop = data.prediction;
+          const confidence = data.confidence;
+
+          resultsSection.innerHTML = `
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+
+          <div class="bg-green-700 px-8 py-5">
+            <h3 class="text-xl font-bold text-white">Recommended Crop</h3>
+          </div>
+
+          <div class="p-8">
+            <div class="text-center mb-6">
+              <div class="text-5xl font-bold text-green-700 mb-2">${crop}</div>
+              <p class="text-gray-500">Based on your soil and climate data</p>
+            </div>
+
+            ${confidence != null ? `
+            <div class="max-w-md mx-auto mb-6">
+              <div class="flex justify-between text-sm text-gray-600 mb-1">
+                <span>Model Confidence</span>
+                <span class="font-bold text-green-700">${confidence.toFixed(1)}%</span>
+              </div>
+              <div class="w-full bg-gray-200 rounded-full h-3">
+                <div class="h-3 bg-green-500 rounded-full" style="width:${Math.min(confidence, 100)}%"></div>
+              </div>
+            </div>` : ''}
+
+            <div class="bg-gray-50 rounded-lg p-4">
+              <h4 class="font-semibold text-gray-700 mb-3">Input Summary</h4>
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+                <div><b>N:</b> ${payload.N}</div>
+                <div><b>P:</b> ${payload.P}</div>
+                <div><b>K:</b> ${payload.K}</div>
+                <div><b>Temp:</b> ${payload.temperature}°C</div>
+                <div><b>Humidity:</b> ${payload.humidity}%</div>
+                <div><b>pH:</b> ${payload.ph}</div>
+                <div><b>Rainfall:</b> ${payload.rainfall} mm</div>
+              </div>
+            </div>
+
+            <div class="text-center mt-6">
+              <button onclick="document.getElementById('results-section').classList.add('hidden')"
+                class="bg-green-700 text-white px-6 py-3 rounded-lg">
+                Try Another
+              </button>
+            </div>
+
+          </div>
+        </div>
+      `;
+
+        } catch (error) {
+          showError(error.message);
+        }
+
+        // reset button
+        button.disabled = false;
+        button.innerText = "Get AI Recommendations";
+      });
+
+      // ============================
+      // REUSABLE ERROR FUNCTION
+      // ============================
+      function showError(message) {
+        resultsSection.classList.remove('hidden');
+        resultsSection.innerHTML = `
+      <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-red-500">
+        <h3 class="text-lg font-bold text-red-700 mb-2">Error</h3>
+        <p class="text-gray-700">${message}</p>
+      </div>
+    `;
+      }
+
+    });
   </script>
 </body>
+
 </html>
