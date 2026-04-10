@@ -79,7 +79,7 @@ Crop-Recommendation-System/
 
 Clone the repository:
 
-git clone https://github.com/your-username/crop-recommendation-system.git
+git clone https://github.com/Gauravpandey0025/krishi-mitra.git
 
 
 Navigate to the project directory:
