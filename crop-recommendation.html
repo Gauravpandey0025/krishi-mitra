@@ -234,10 +234,9 @@
           // ============================
           // STEP 5: API CALL
           // ============================
-          const response = await fetch('http://localhost:5000/predict_crop', {
+          const response = await fetch('https://krishi-mitra-backend-3.onrender.com/predict_disease', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload)
+            body: formData
           });
 
           const data = await response.json();
